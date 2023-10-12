@@ -24,16 +24,16 @@ fi
 
 # main process
 base_job="bash"
-job="test_ae.sh"
+job="train_ae.sh"
 
 if [ "${dev_eval}" = "-d" ] || [ "${dev_eval}" = "--dev" ]
 then
     dataset_list="DCASE2023T2bearing DCASE2023T2fan DCASE2023T2gearbox DCASE2023T2slider DCASE2023T2ToyCar DCASE2023T2ToyTrain DCASE2023T2valve"
 elif [ "${dev_eval}" = "-e" ] || [ "${dev_eval}" = "--eval" ]
 then
-    dataset_list="DCASE2023T2ToyDrone DCA SE2023T2ToyNscale DCASE2023T2ToyTank DCASE2023T2Vacuum DCASE2023T2bandsaw DCASE2023T2grinder DCASE2023T2shaker"
+    dataset_list="DCASE2023T2ToyDrone DCASE2023T2ToyNscale DCASE2023T2ToyTank DCASE2023T2Vacuum DCASE2023T2bandsaw DCASE2023T2grinder DCASE2023T2shaker"
 fi
 
 for dataset in $dataset_list; do
-    ${base_job} ${job} ${dataset} ${dev_eval} "MSE" 0
+    ${base_job} ${job} ${dataset} ${dev_eval} 0
 done
