@@ -1,4 +1,4 @@
-
+#!bin/bash
 mkdir -p "data/dcase2023t2/dev_data/raw"
 # download dev data
 cd "data/dcase2023t2/dev_data/raw"
